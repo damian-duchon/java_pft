@@ -19,9 +19,6 @@ public class FirstProgram
 		System.out.println("Powierzchnia prostokata " + r.a + " i " + r.b + " = " + r.area());
 	}
 
-	public static void hello(String somebody) {
-		System.out.println("Hello, " + somebody + "!");
-
-	}
+	public static void hello(String somebody) { System.out.println("Hello, " + somebody + "!"); }
 
 }
