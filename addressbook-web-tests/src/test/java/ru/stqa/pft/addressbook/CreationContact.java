@@ -22,17 +22,19 @@ public class CreationContact {
     public void setUp() throws Exception {
       wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
       wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+      wd.get("http://localhost/addressbook/");
+      wd.findElement(By.name("user")).click();
+      wd.findElement(By.name("user")).sendKeys("admin");
+      wd.findElement(By.name("pass")).click();
+      wd.findElement(By.name("pass")).sendKeys("secret");
+      wd.findElement(By.name("pass")).click();
+      wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+
     }
     
     @Test
-    public void CreationContact() {
-        wd.get("http://localhost/addressbook/");
-        wd.findElement(By.name("user")).click();
-        wd.findElement(By.name("user")).sendKeys("admin");
-        wd.findElement(By.name("pass")).click();
-        wd.findElement(By.name("pass")).sendKeys("secret");
-        wd.findElement(By.name("pass")).click();
-        wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
+    public void testCreationContact() {
+
         wd.findElement(By.linkText("Last name")).click();
         wd.findElement(By.linkText("add new")).click();
         wd.findElement(By.name("firstname")).click();
