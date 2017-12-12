@@ -20,7 +20,7 @@ public class GroupCreationTests {
     
     @BeforeMethod
     public void setUp() throws Exception {
-      wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox/firefox/.exe "));
+        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
       wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
     
