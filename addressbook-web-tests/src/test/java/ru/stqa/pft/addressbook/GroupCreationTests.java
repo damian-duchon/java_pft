@@ -17,24 +17,22 @@ import static org.openqa.selenium.OutputType.*;
 
 public class GroupCreationTests {
     FirefoxDriver wd;
-    
+
     @BeforeMethod
     public void setUp() throws Exception {
-      wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox/firefox/.exe "));
-      wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+        wd = new FirefoxDriver(new FirefoxOptions().setLegacy(true).setBinary("C:/Program Files/Mozilla Firefox/firefox.exe"));
+        wd.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
     }
-    
+
+
     @Test
     public void GroupCreationTests() {
-        wd.get("http://localhost/addressbook/index.php");
+        wd.get("http://localhost/addressbook/group.php");
         wd.findElement(By.name("user")).click();
         wd.findElement(By.name("user")).sendKeys("admin");
         wd.findElement(By.name("pass")).click();
         wd.findElement(By.name("pass")).sendKeys("secret");
-        wd.findElement(By.cssSelector("html")).click();
-        wd.findElement(By.cssSelector("html")).click();
         wd.findElement(By.xpath("//form[@id='LoginForm']/input[3]")).click();
-        wd.findElement(By.linkText("groups")).click();
         wd.findElement(By.name("new")).click();
         wd.findElement(By.name("group_name")).click();
         wd.findElement(By.name("group_name")).clear();
