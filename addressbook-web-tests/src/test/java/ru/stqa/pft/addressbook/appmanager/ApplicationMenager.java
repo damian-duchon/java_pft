@@ -8,7 +8,7 @@ import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.concurrent.TimeUnit;
 
-public class ApplicationMenager {
+public class ApplicationMenager extends GroupHelper {
   FirefoxDriver wd;
 
   public static boolean isAlertPresent(FirefoxDriver wd) {
