@@ -28,4 +28,20 @@ public class ContactHelper extends HelperBase{
     public void returnToHomePage() {
         click(By.linkText("home page"));
     }
+
+    public void selectContactToEdit() {
+        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+    }
+
+    public void selectContactToDelete() {
+        click(By.xpath("//div/div[4]/form[2]/table/tbody/tr[2]/td[1]/input"));
+    }
+
+    public void submitContactModificcation() {
+        click(By.xpath("//div[@id='content']/form[1]/input[22]"));
+    }
+
+    public void deletion() {
+        click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+    }
 }

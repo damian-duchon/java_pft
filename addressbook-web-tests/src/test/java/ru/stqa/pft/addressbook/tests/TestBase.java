@@ -13,6 +13,10 @@ public class TestBase {
     app.init();
   }
 
+  public void acceptAlert() {
+    app.acceptAlert();
+  }
+
   @AfterMethod
   public void tearDown() {
     app.stop();
