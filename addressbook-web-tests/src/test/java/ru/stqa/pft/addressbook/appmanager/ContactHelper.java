@@ -36,6 +36,10 @@ public class ContactHelper extends HelperBase{
         click(By.linkText("home page"));
     }
 
+    public void initCreationNewContack() {
+        click(By.linkText("add new"));
+    }
+
     public void selectContactToEdit() {
         click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
     }
