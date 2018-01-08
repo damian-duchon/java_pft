@@ -19,7 +19,7 @@ public class GroupData {
     }
 
 
-       public GroupData(String test1, String name, String header, String footer) {
+       public GroupData(String name, String header, String footer) {
         this.id = 0;
         this.name = name;
         this.header = header;
