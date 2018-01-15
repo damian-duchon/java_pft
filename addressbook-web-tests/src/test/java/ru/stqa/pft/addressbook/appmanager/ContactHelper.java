@@ -49,7 +49,28 @@ public class ContactHelper extends HelperBase{
 
     private void selectContactById(int index) {
 
-    }
+
+
+          List<WebElement> rows = wd.findElements(By.name("entry"));
+
+            for (WebElement row : rows) {
+
+                List<WebElement> cells = row.findElements(By.tagName("td"));
+
+                int iD = Integer.parseInt(cells.get(0).findElement(By.tagName("input")).getAttribute("id"));
+
+                if (index == iD) {
+
+                    cells.get(7).findElement(By.cssSelector("img[title=\"Edit\"]")).click();
+
+                    return;
+
+                }
+
+            }
+
+        }
+
 
     public void toDelete(int index) {
         wd.findElements(By.cssSelector("tr[name='entry']")).get(index).findElement(By.xpath("td[1]/input")).click();
