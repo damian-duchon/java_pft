@@ -90,4 +90,6 @@ public class GroupHelper extends HelperBase {
         return groups;
     }
 
+    public void delete(int index) {
+    }
 }
