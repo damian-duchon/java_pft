@@ -7,6 +7,7 @@ import ru.stqa.pft.addressbook.model.ContactData;
 import ru.stqa.pft.addressbook.model.GroupData;
 
 import java.util.List;
+import java.util.Set;
 
 public class ContactDeletionTest extends TestBase {
 
@@ -20,13 +21,13 @@ public class ContactDeletionTest extends TestBase {
     }
     @Test
     public void testContactDeletion() {
-        List<ContactData> before = app.helper().list();
-        int index = before.size() - 1;
-        app.helper().delete(index);
-        List<ContactData> after = app.helper().list();
+        Set<ContactData> before = app.helper().all();
+        ContactData deletedGroup = before.iterator().next();
+        app.helper().delete(deletedGroup);
+        Set<ContactData> after = app.helper().all();
         Assert.assertEquals(after.size(), before.size() - 1);
 
-        before.remove(index);
+        before.remove(deletedGroup);
         Assert.assertEquals(before, after);
     }
 
