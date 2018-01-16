@@ -7,7 +7,6 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -70,12 +69,7 @@ public class ContactHelper extends HelperBase{
             }
 
         }
-
-
-    public void toDelete(int index) {
-        wd.findElements(By.cssSelector("tr[name='entry']")).get(index).findElement(By.xpath("td[1]/input")).click();
-    }
-    public void toDeleteById(int id) {
+       public void toDeleteById(int id) {
         wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
@@ -101,38 +95,14 @@ public class ContactHelper extends HelperBase{
         returnToHomePage();
 
     }
-
-
-
-    public void delete(int index) {
-        toDelete(index);
-        deletion();
-        acceptAlert();
-        returnToHomePage();
-    }
-    public void delete(ContactData group) {
+       public void delete(ContactData group) {
         toDeleteById(group.getId());
         deletion();
         acceptAlert();
         returnToHomePage();
     }
 
-    public boolean isThereAContact() {
-        return isElementPresent(By.name("selected[]"));
-    }
-
-    public List<ContactData> list() {
-        List<ContactData> contacts = new ArrayList<ContactData>();
-        List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
-        for (WebElement element : elements){
-            String firstName = element.findElement(By.xpath("td[3]")).getText();
-            String lastName = element.findElement(By.xpath("td[2]")).getText();
-            int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-                       contacts.add(new ContactData().withId(id).withName(firstName).withLastname(lastName));
-        }
-        return contacts;
-    }
-    public Set<ContactData> all() {
+          public Set<ContactData> all() {
         Set<ContactData> contacts = new HashSet<ContactData>();
         List<WebElement> elements = wd.findElements(By.cssSelector("tr[name='entry']"));
         for (WebElement element : elements){
