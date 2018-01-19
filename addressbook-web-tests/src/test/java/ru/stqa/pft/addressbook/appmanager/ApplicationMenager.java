@@ -69,8 +69,4 @@ public class ApplicationMenager {
     public ContactHelper helper() {
         return contactHelper;
     }
-
-    public void contact() {
-
-    }
 }

@@ -23,10 +23,40 @@ public class ContactData {
     result = 31 * result + (lastname != null ? lastname.hashCode() : 0);
     return result;
   }
-
+private String firstname;
   private String lastname;
   private String phone;
+  private String mail;
+  private String group;
+  private String homephone;
+  private String workphone;
 
+  public String getFirstname() {
+    return firstname;
+  }
+
+  public ContactData withFirstname(String firstname) {
+    this.firstname = firstname;
+    return this;
+  }
+
+  public String getHomephone() {
+    return homephone;
+  }
+
+  public ContactData withHomephone(String homephone) {
+    this.homephone = homephone;
+    return this;
+  }
+
+  public String getWorkphone() {
+    return workphone;
+  }
+
+  public ContactData withWorkphone(String workphone) {
+    this.workphone = workphone;
+    return this;
+  }
 
   public String getName() {
     return name;
@@ -83,8 +113,6 @@ public class ContactData {
         return this;
     }
 
-    private String mail;
-    private String group;
 
   @Override
   public String toString() {

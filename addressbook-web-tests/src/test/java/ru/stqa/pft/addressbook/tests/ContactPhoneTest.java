@@ -8,9 +8,9 @@ public class ContactPhoneTest extends TestBase {
     
     @Test
     public void testContactPhones(){
-        app.goTo().gotoHomePage();
-        ContactData contact = app.contact().all().iterator().next();
-        ContactData contactInfoFromEditForm = app.contact().infoFromEditForm(contact);
+        app.goTo().homePage();
+        ContactData contact = app.helper().all().iterator().next();
+        ContactData contactInfoFromEditForm = app.helper().infoFromEditForm(contact);
     }
 
 }
