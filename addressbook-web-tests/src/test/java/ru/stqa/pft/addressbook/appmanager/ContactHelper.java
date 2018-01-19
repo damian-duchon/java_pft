@@ -116,8 +116,7 @@ public class ContactHelper extends HelperBase {
     }
 
     public ContactData infoFromEditForm(ContactData contact) {
-        initContactModificationById(contact
-                .getId());
+        initContactModificationById(contact.getId());
         String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
         String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
         String home = wd.findElement(By.name("home")).getAttribute("value");
@@ -134,6 +133,8 @@ public class ContactHelper extends HelperBase {
         WebElement row = checkbox.findElement(By.xpath("./../.."));
         List<WebElement> cells = row.findElements(By.tagName("td"));
         cells.get(7).findElement(By.tagName("a")).click();
+
+        wd.findElement(By.xpath(String.format("//input[@value='%s']/../../td[8]/a",id))).click();
 
     }
 }
