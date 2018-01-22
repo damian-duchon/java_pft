@@ -40,8 +40,9 @@ private String firstname;
     return this;
   }
 
-  public String getHomephone() {
-    return homephone;
+  public ContactData getHomephone() {
+    this.homephone =homephone;
+    return this;
   }
 
   public ContactData withHomephone(String homephone) {
@@ -50,6 +51,7 @@ private String firstname;
   }
 
   public String getWorkphone() {
+    this.workphone = workphone;
     return workphone;
   }
 
