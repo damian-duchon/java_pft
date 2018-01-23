@@ -30,6 +30,18 @@ private String firstname;
   private String group;
   private String homephone;
   private String workphone;
+  private String allphones;
+
+    public String getAllphones() {
+        return allphones;
+    }
+
+    public ContactData withAllphones(String allphones) {
+        this.allphones = allphones;
+        return this;
+    }
+
+
 
   public String getFirstname() {
     return firstname;
