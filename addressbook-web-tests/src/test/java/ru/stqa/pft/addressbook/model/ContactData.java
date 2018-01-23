@@ -68,6 +68,10 @@ private String firstname;
     return lastname;
   }
 
+  public String getHomePhone() {
+    return homephone;
+  }
+
   public String getPhone() {
     return phone;
   }
