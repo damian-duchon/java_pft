@@ -9,16 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactAddressTest extends TestBase {
 
-    @BeforeMethod
-    public void ensurePreconditions() {
-        app.goTo().homePage();
-        //if (!app.helper().isThereAContact()) {
-            app.helper().infoFromEditForm(new ContactData()
-                    .withName("Damian").withLastname("Duchon").withAddress("krakow").withHomephone("+7 (111)").withMail("dam@gmail.com").withGroup("test1"));
-        //}
-    }
-
-    @Test (enabled = true)
+    @Test(enabled = true)
     public void testContactAdress() {
         ContactData contact = app.helper().all().iterator().next();
         ContactData contactInfoFromEditForm = app.helper().infoFromEditForm(contact);
@@ -28,6 +19,6 @@ public class ContactAddressTest extends TestBase {
     }
 
     private String cleaned(String address) {
-        return address.replaceAll("\\s","");
+        return address.replaceAll("\\s", "");
     }
 }
