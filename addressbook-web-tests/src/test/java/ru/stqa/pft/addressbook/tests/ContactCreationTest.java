@@ -9,7 +9,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 public class ContactCreationTest extends  TestBase {
 
-  @Test(enabled = false)
+  @Test(enabled = true)
   public void testContactCreation() {
     app.goTo().homePage();
     Contacts before = app.helper().all();
